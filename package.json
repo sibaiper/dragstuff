@@ -2,28 +2,16 @@
   "name": "dragstuff",
   "version": "1.0.0",
   "files": [
-    "dist/",
-    "README.md",
-    "LICENSE"
+    "dist"
+  ],
+  "include": [
+    "src/**/*"
   ],
   "description": "Lightweight easy to use dragging package",
-  "main": "./dist/main.js",
+  "main": "./dist/index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup"
-  },
-  "tsup": {
-    "entry": [
-      "src/main.js"
-    ],
-    "format": [
-      "esm"
-    ],
-    "sourcemap": true,
-    "clean": true,
-    "target": "esnext",
-    "skipNodeModulesBundle": true
   },
   "repository": {
     "type": "git",
