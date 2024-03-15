@@ -1,6 +1,11 @@
 {
   "name": "dragstuff",
   "version": "1.0.0",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
   "description": "Lightweight easy to use dragging package",
   "main": "./dist/main.js",
   "type": "module",
