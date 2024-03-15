@@ -8,13 +8,6 @@ function clamp(lowerBound, upperBound, value) {
   }
 }
 
-function drag_y(el, val = newY) {
-  el.style.top = `${val}px`;
-}
-function drag_x(el, val = newY) {
-  el.style.left = `${val}px`;
-}
-
 function getElement(selectorOrElement) {
   if (typeof selectorOrElement === "string") {
     // If it's a string, assume it's a CSS selector
@@ -190,12 +183,12 @@ const Drag = {
         }
 
         if (options && options.type === "x") {
-          drag_x(draggable, newX);
+          el.style.top = `${val}px`;
         } else if (options && options.type === "y") {
-          drag_y(draggable, newY);
+          el.style.top = `${val}px`;
         } else {
-          drag_x(draggable, newX);
-          drag_y(draggable, newY);
+          el.style.top = `${val}px`;
+          el.style.top = `${val}px`;
         }
       }
     }
@@ -214,4 +207,5 @@ const Drag = {
 };
 
 
-export { Drag };
+
+export default Drag;
