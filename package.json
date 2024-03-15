@@ -1,0 +1,43 @@
+{
+  "name": "dragstuff",
+  "version": "1.0.0",
+  "description": "Lightweight easy to use dragging package",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "tsup": {
+    "entry": [
+      "src/main.js"
+    ],
+    "format": [
+      "esm"
+    ],
+    "sourcemap": true,
+    "clean": true,
+    "target": "esnext",
+    "skipNodeModulesBundle": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sibaiper/dragstuff.git"
+  },
+  "keywords": [
+    "drag",
+    "js",
+    "DOM",
+    "dragging"
+  ],
+  "author": "Sibai Isaac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sibaiper/dragstuff/issues"
+  },
+  "homepage": "https://github.com/sibaiper/dragstuff#readme",
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}
