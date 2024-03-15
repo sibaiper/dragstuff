@@ -2,7 +2,7 @@
   "name": "dragstuff",
   "version": "1.0.0",
   "description": "Lightweight easy to use dragging package",
-  "main": "main.js",
+  "main": "./dist/main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
