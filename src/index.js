@@ -183,12 +183,12 @@ const Drag = {
         }
 
         if (options && options.type === "x") {
-          el.style.top = `${val}px`;
+          draggable.style.left = `${newX}px`;
         } else if (options && options.type === "y") {
-          el.style.top = `${val}px`;
+          draggable.style.top = `${newY}px`;
         } else {
-          el.style.top = `${val}px`;
-          el.style.top = `${val}px`;
+          draggable.style.left = `${newX}px`;
+          draggable.style.top = `${newY}px`;
         }
       }
     }
