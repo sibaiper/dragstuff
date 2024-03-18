@@ -36,14 +36,14 @@ const Drag = {
     let startMouseY = 0;
     let offsetX = 0;
     let offsetY = 0;
-    let threshold = 5;
+    let threshold = options && options.threshold ? options.threshold : 5;
 
-    let type = options.type || "xy"; // I think these vars are not needed here
-    let bounds = options.bounds || null; // I think these vars are not needed
-    let onDragStart = options.onDragStart || function () {};
-    let onDragEnd = options.onDragEnd || function () {};
-    let onClick = options.onClick || function () {};
-    let onDrag = options.onDrag || function () {};
+    let type = options && options.type ? options.type : "xy"; // I think these vars are not needed here
+    // let bounds = options.bounds || null; // I think these vars are not needed
+    let onDragStart = options && options.onDragStart ? options.onDragStart : function () {};
+    let onDragEnd = options && options.onDragEnd ? options.onDragEnd : function () {};
+    let onClick = options && options.onClick ? options.onClick : function () {};
+    let onDrag = options && options.onDrag ? options.onDrag : function () {};
     let originalZIndex = 1; // Initial z-index value
 
     var newX, newY;
@@ -129,26 +129,14 @@ const Drag = {
         newX = e.clientX - offsetX;
         newY = e.clientY - offsetY;
 
-        if (options && options.type === "x") {
-          // For 'x' type, only allow horizontal dragging (along the x-axis)
-          newX = e.clientX - offsetX;
-          newY = draggable.offsetTop;
-        } else if (options && options.type === "y") {
-          // For 'y' type, only allow vertical dragging (along the y-axis)
-          newX = draggable.offsetLeft;
-          newY = e.clientY - offsetY;
-        } else {
-          // For any other type or no type specified, allow dragging in both 'x' and 'y' axes
-          newX = e.clientX - offsetX;
-          newY = e.clientY - offsetY;
-        }
-
         if (options && options.bounds) {
           let bounding_box = document.querySelector(options.bounds);
 
           if (bounding_box instanceof HTMLElement) {
             const computedStyles = window.getComputedStyle(bounding_box);
             const position = computedStyles.getPropertyValue("position");
+
+            let minX, minY, maxX, maxY
 
             if (position === "relative") {
               // If position is relative, calculate offsets relative to the bounding box itself
@@ -182,9 +170,13 @@ const Drag = {
           }
         }
 
-        if (options && options.type === "x") {
+
+        if (options && type === "x") {
           draggable.style.left = `${newX}px`;
-        } else if (options && options.type === "y") {
+        } else if (options && type === "y") {
+          draggable.style.top = `${newY}px`;
+        } else if (type === "xy"){
+          draggable.style.left = `${newX}px`;
           draggable.style.top = `${newY}px`;
         } else {
           draggable.style.left = `${newX}px`;

@@ -1,14 +1,32 @@
-# DRAGS: easy to use dragging functionality with complex events.
+# DRAGSTUFF: Easy-to-Use Dragging Functionality with Complex Events
+
+DRAGSTUFF is a lightweight and versatile JavaScript library for implementing drag functionality in your web applications. With DRAGSTUFF, you can easily integrate dragging capabilities into your projects, whether it's for moving elements within a container or implementing complex event handling during dragging actions.
+
+## Installation
+
+You can install DRAGSTUFF via npm:
+
+```bash
+npm install dragstuff 
+```
 
 
-## to use it on a single item:
 
- 
+to import DRAGSTUFF:
+```bash
+import Drag from "dragstuff";
+```
+
+
+# USAGE:
+
+**basic example on a single HTML element:**
+
 `Drag.init("#cssSelector");`
-      
 _you can also use a variable instead of a CSS selector_
 
-## or use it on an array:
+
+**or use it on an array:**
 
 `items.forEach(item => {
             Drag.init(item, {
@@ -16,7 +34,7 @@ _you can also use a variable instead of a CSS selector_
             })
         })` 
 
-## you can also specify the direction on which to drag in:
+**you can also specify the direction on which to drag in:**
 
 `Drag.init(item, {bounds: ".container",  type: "x" })`
 
