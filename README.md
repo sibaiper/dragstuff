@@ -2,6 +2,11 @@
 
 DRAGSTUFF is a lightweight and versatile JavaScript library for implementing drag functionality in your web applications. With DRAGSTUFF, you can easily integrate dragging capabilities into your projects, whether it's for moving elements within a container or implementing complex event handling during dragging actions.
 
+
+[View Demo](https://dragstuff-demo.vercel.app/)
+
+
+
 ## Installation
 
 You can install DRAGSTUFF via npm:
