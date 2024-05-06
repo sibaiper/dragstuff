@@ -55,7 +55,6 @@ class Drag {
 
     this.ignore = options.ignore || [];
 
-    //uncomment this to make it that on init dragstuff will find all elements to ignore and store them
     for (let i = 0; i < this.ignore.length; i++) {
       //get the items specified by the user:
       const element = this.ignore[i];
@@ -326,14 +325,13 @@ class Drag {
 
       }
 
-      //fire these only of the bounds are NOT an object
-      // if (is.str(this.bounds || is.dom(this.bounds))) {
+
       // Clamp newX and newY between minX, minY, maxX, maxY as needed
       this.newX = clamp(this.minX, this.maxX, this.newX);
       this.newY = clamp(this.minY, this.maxY, this.newY);
 
       //eventually move the item to where it needs to go:
-
+      
       if (this.lockAxis === "x") {
         this.newX = Math.round(this.newX / this.snapValue) * this.snapValue;
         this.draggable.style.left = `${this.newX}px`;
@@ -351,7 +349,6 @@ class Drag {
         this.draggable.style.left = `${this.newX}px`;
         this.draggable.style.top = `${this.newY}px`;
       }
-      // }
     }
   }
 
@@ -380,18 +377,15 @@ class Drag {
     this.draggable.style.userSelect = "auto";
     this.draggable.style.isolation = "auto";
 
-    // Clean up any other references or state variables
-    // For example, you may want to remove this instance from the draggableObjects array:
+    // Clean up
     const index = draggableObjects.indexOf(this.draggable);
     if (index !== -1) {
       draggableObjects.splice(index, 1);
     }
 
-    // Optionally, nullify other references to DOM elements or objects
+    // Optional
     this.draggable = null;
     this.ignore = null;
-
-    // If you have any additional cleanup tasks, perform them here
   }
 }
 
