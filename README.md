@@ -19,7 +19,7 @@ npm install dragstuff
 
 to import DRAGSTUFF:
 ```bash
-import Drag from "dragstuff";
+import dragstuff from "dragstuff";
 ```
 
 
@@ -27,21 +27,21 @@ import Drag from "dragstuff";
 
 **basic example on a single HTML element:**
 
-`Drag.init("#cssSelector");`
+`dragstuff.init("#cssSelector");`
 _you can also use a variable instead of a CSS selector_
 
 
 **or use it on an array:**
 
 `items.forEach(item => {
-            Drag.init(item, {
+            dragstuff.init(item, {
                 bounds: ".container",
             })
         })` 
 
 **you can also specify the direction on which to drag in:**
 
-`Drag.init(item, {bounds: ".container",  type: "x" })`
+`dragstuff.init(item, {bounds: ".container",  type: "x" })`
 
 
 ## settings avaiable to change:
