@@ -1,3 +1,4 @@
+
 # DRAGSTUFF: Easy-to-Use Dragging Functionality with Complex Events
 
 DRAGSTUFF is a lightweight and versatile JavaScript library for implementing drag functionality in your web applications. With DRAGSTUFF, you can easily integrate dragging capabilities into your projects, whether it's for moving elements within a container or implementing complex event handling during dragging actions.
@@ -25,26 +26,38 @@ import dragstuff from "dragstuff";
 
 # USAGE:
 
-**basic example on a single HTML element:**
+**BASEIC EXAMPLE:**
 
-`dragstuff.init("#cssSelector");`
-_you can also use a variable instead of a CSS selector_
+```javascript
+dragstuff.init("#cssSelector");
+```
 
 
-**or use it on an array:**
+**USE IT ON AN ARRAY:**
 
-`items.forEach(item => {
-            dragstuff.init(item, {
-                bounds: ".container",
-            })
-        })` 
+```javascript
+items.forEach(item => {
+      dragstuff.init(item, {
+            bounds: ".container",
+      })
+})
+``` 
 
-**you can also specify the direction on which to drag in:**
+**BOUND THE ELEMENT IN A CIRCULAR CONTAINER**
 
-`dragstuff.init(item, {bounds: ".container",  type: "x" })`
-
+```javascript
+dragstuff.init(item, {
+      bounds: {
+            type:"circle", 
+            element: container
+      }
+})
+```
 
 ## settings avaiable to change:
+
+Ignore a list of child elements inside the selected element: 
+`ingore: [el1, el2 ...]`
 
 call a function only if the user does initialize dragging:
 `onClick: () => {}`
@@ -58,11 +71,22 @@ call a function only once the user stops dragging
 call a function once only if the user initialzed drag.
 `onDragStart: () => {}` 
 
+call a function once on mouseup regardless on click or dragend.
+`onMouseUp: () => {}` 
+
+call a function once on mousedown regardless on click or dragend
+`onMouseDown () => {}` 
+
 specify the direction of the drag. 
-`type: "x"` can be set to x or y (or both but why)
+`axisLock: "x"` can be set to x or y (or both but why)
 
 specify the area where to not allow the object to be dragged beyond. 
-`bounds: "cssElement"` or you can use an elen
+`bounds: "cssElement"` or you can use an element
+
+specify the threshold to init drag:  
+`threshold: 20 `
+
+specify the snapvalue:  
+`liveSnap: 20 ` ( automatically applies Math.ceil(value) )
 
 ##
-### future plans: add the ability to change the drag init threshold.
